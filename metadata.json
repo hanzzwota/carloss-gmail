@@ -1,0 +1,6 @@
+{
+  "name": "Carlos69 Gmail - Platform Setor & Jual Beli Akun Gmail",
+  "description": "Platform exchange dan jual beli akun Gmail terpercaya dengan sistem setor instan, verifikasi admin, penarikan saldo e-wallet/bank, dan integrasi Midtrans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
