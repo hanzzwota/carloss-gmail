@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// User model
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  weatherSearches   WeatherSearch[]
+  weatherFavorites  WeatherFavorite[]
+  weatherAlerts     WeatherAlert[]
+}
+
+// Weather Search History
+model WeatherSearch {
+  id              Int      @id @default(autoincrement())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  city            String
+  temperature     Float?
+  humidity        Int?
+  description     String?
+  icon            String?
+  weatherData     Json?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([userId])
+  @@index([city])
+  @@index([createdAt])
+}
+
+// Weather Favorites
+model WeatherFavorite {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  city      String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, city])
+  @@index([userId])
+}
+
+// Weather Alerts
+model WeatherAlert {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  city      String
+  alertType String   // "temp_high", "temp_low", "rain", "wind"
+  threshold Float?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([city])
+}
+
+// Weather History (Analytics)
+model WeatherHistory {
+  id               Int      @id @default(autoincrement())
+  city             String
+  temperature      Float?
+  humidity         Int?
+  windSpeed        Float?
+  pressure         Int?
+  weatherCondition String?
+  recordedAt       DateTime @default(now())
+
+  @@index([city])
+  @@index([recordedAt])
+}
