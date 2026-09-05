@@ -23,6 +23,28 @@
       "rejectedCount": 2
     },
     {
+      "id": "usr-admin-001",
+      "name": "Admin ZERO99 Pusat",
+      "username": "Ryu0508",
+      "email": "admin@zero99.com",
+      "password": "Hanzz0508",
+      "role": "admin",
+      "danaNumber": "081199990000",
+      "danaAccountName": "ADMIN ZERO99 PUSAT",
+      "saldo": 130017987,
+      "status": "active",
+      "qualityScore": 89,
+      "trustBadge": "89% • Good Seller",
+      "phone": "081199990000",
+      "joinedAt": "01/01/2026",
+      "referralCode": "ADMIN-ZERO99",
+      "passwordChangedAt": "10/01/2026",
+      "totalSubmissions": 10,
+      "acceptedCount": 17,
+      "pendingCount": 0,
+      "rejectedCount": 2
+    },
+    {
       "id": "ab95e9f0-efa3-4dc7-b414-4d027d0b56f9",
       "name": "Hanzz Wota",
       "username": "Hanzz0508",
