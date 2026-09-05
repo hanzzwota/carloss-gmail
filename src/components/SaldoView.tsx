@@ -76,15 +76,16 @@ export const SaldoView: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-3 pb-24 space-y-4">
-      {/* 1. BLUE HERO SALDO CARD (MATCHING SCREENSHOT 3) */}
-      <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-indigo-800 text-white rounded-3xl p-6 shadow-xl relative overflow-hidden">
+    <div className="w-full max-w-none px-1 sm:px-2 pt-3 pb-24 space-y-4">
+      {/* 1. HERO SALDO CARD */}
+      <div className="bg-[#0F172A] text-white rounded-2xl p-6 border-2.5 border-slate-900 shadow-[4px_4px_0px_0px_#6366f1] relative overflow-hidden">
         <div className="relative z-10 space-y-3">
-          <div className="text-xs font-semibold text-blue-100 uppercase tracking-wider">
-            Saldo saat ini
+          <div className="text-xs font-black text-slate-300 uppercase tracking-wider flex items-center justify-between">
+            <span>Saldo saat ini</span>
+            <span className="bg-emerald-400 text-slate-900 px-2 py-0.5 rounded-md border-2 border-slate-900 text-[10px] font-black">Ready</span>
           </div>
 
-          <div className="text-3xl sm:text-4xl font-black tracking-tight font-mono">
+          <div className="text-3xl sm:text-4xl font-black tracking-tight font-mono text-amber-300">
             Rp{saldo.toLocaleString('id-ID')}
           </div>
 
@@ -96,7 +97,7 @@ export const SaldoView: React.FC = () => {
               }
               setShowWithdrawModal(true);
             }}
-            className="w-full py-3 rounded-2xl bg-white text-indigo-700 hover:bg-blue-50 active:scale-98 font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-3 rounded-xl bg-amber-300 text-slate-900 hover:bg-amber-400 active:translate-x-0.5 active:translate-y-0.5 font-black text-xs border-2.5 border-slate-900 shadow-[3px_3px_0px_0px_#0f172a] transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <Download className="w-4 h-4 text-indigo-600" />
             <span>Tarik Saldo</span>

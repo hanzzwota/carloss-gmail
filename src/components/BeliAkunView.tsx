@@ -44,7 +44,7 @@ export const BeliAkunView: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-3 pb-24 space-y-4">
+    <div className="w-full max-w-none px-1 sm:px-2 pt-3 pb-24 space-y-4">
       {/* Hero Banner */}
       <div className="bg-gradient-to-br from-indigo-900 via-slate-900 to-indigo-950 text-white rounded-3xl p-6 shadow-xl relative overflow-hidden border border-indigo-800">
         <div className="relative z-10 space-y-2">

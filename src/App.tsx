@@ -103,7 +103,7 @@ const AppContent: React.FC = () => {
       />
 
       {/* Main Content View Switcher */}
-      <main className="flex-1 w-full max-w-lg mx-auto">
+      <main className="flex-1 w-full max-w-xl md:max-w-2xl px-2.5 sm:px-4 mx-auto pb-24">
         {activeTab === 'beranda' && (
           <DashboardView
             onOpenTarikSaldo={() => setActiveTab('saldo')}

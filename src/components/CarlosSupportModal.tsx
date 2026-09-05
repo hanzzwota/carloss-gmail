@@ -396,31 +396,31 @@ export const CarlosSupportModal: React.FC<CarlosSupportModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 animate-in fade-in">
-      <div className="bg-[#0F172A] text-slate-100 w-full max-w-lg rounded-3xl shadow-2xl border border-slate-800 flex flex-col h-[90vh] max-h-[720px] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 animate-in fade-in">
+      <div className="bg-[#fffefb] text-slate-900 w-full max-w-lg rounded-2xl border-2.5 border-slate-900 shadow-[5px_5px_0px_0px_#0f172a] flex flex-col h-[90vh] max-h-[720px] overflow-hidden">
         
         {/* ================= MODAL HEADER ================= */}
-        <div className="p-4 border-b border-slate-800/80 bg-slate-900/90 flex items-center justify-between gap-3 shrink-0">
+        <div className="p-4 border-b-2.5 border-slate-900 bg-amber-300 flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20 font-black text-sm">
+            <div className="w-10 h-10 rounded-xl bg-indigo-600 border-2 border-slate-900 shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white flex items-center justify-center font-black text-sm">
               <Bot className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-extrabold text-white tracking-tight">
+                <h2 className="text-sm font-black text-slate-900 tracking-tight">
                   Carlos Support
                 </h2>
                 {settings.isSupportAiEnabled !== false ? (
-                  <span className="px-2 py-0.2 rounded-full text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  <span className="px-2 py-0.5 rounded-lg text-[9px] font-black bg-emerald-300 text-slate-900 border border-slate-900 shadow-[1px_1px_0px_0px_#0f172a]">
                     Online 24 Jam
                   </span>
                 ) : (
-                  <span className="px-2 py-0.2 rounded-full text-[9px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  <span className="px-2 py-0.5 rounded-lg text-[9px] font-black bg-rose-300 text-slate-900 border border-slate-900 shadow-[1px_1px_0px_0px_#0f172a]">
                     AI FAQ Aktif • Chat Admin Tutup
                   </span>
                 )}
               </div>
-              <p className="text-[10px] text-slate-400">
+              <p className="text-[10px] text-slate-800 font-bold">
                 Pusat Bantuan Resmi &amp; Layanan Customer Service
               </p>
             </div>
@@ -430,34 +430,34 @@ export const CarlosSupportModal: React.FC<CarlosSupportModalProps> = ({
             {currentView !== 'menu' && (
               <button
                 onClick={() => setCurrentView('menu')}
-                className="px-2.5 py-1 rounded-xl bg-slate-800 hover:bg-slate-700 text-[11px] font-bold text-slate-300 transition-colors cursor-pointer"
+                className="px-2.5 py-1 rounded-lg bg-white border-2 border-slate-900 shadow-[1.5px_1.5px_0px_0px_#0f172a] text-[11px] font-black text-slate-900 hover:bg-slate-100 transition-all cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
               >
                 Menu Utama
               </button>
             )}
             <button
               onClick={onClose}
-              className="p-1.5 rounded-xl bg-slate-800/60 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors cursor-pointer"
+              className="w-8 h-8 rounded-lg bg-white border-2 border-slate-900 shadow-[1.5px_1.5px_0px_0px_#0f172a] text-slate-900 flex items-center justify-center hover:bg-slate-100 cursor-pointer active:translate-x-0.5 active:translate-y-0.5 transition-all"
             >
-              <X className="w-4 h-4" />
+              <X className="w-4 h-4 font-black" />
             </button>
           </div>
         </div>
 
         {/* ================= CONTENT BODY ================= */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs font-semibold">
           
           {/* VIEW 1: MENU UTAMA (SAPAAN BOT & PILIHAN INTERAKTIF) */}
           {currentView === 'menu' && (
             <div className="space-y-4 animate-in fade-in zoom-in-95 duration-150">
               {/* If Support AI / Admin Messaging is Disabled by Admin */}
               {settings.isSupportAiEnabled === false && (
-                <div className="p-4 bg-amber-950/50 border border-amber-600/50 rounded-3xl text-amber-200 space-y-2 shadow-lg">
-                  <div className="flex items-center gap-2 font-bold text-xs text-amber-300">
-                    <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
+                <div className="p-4 bg-rose-200 border-2.5 border-slate-900 shadow-[3.5px_3.5px_0px_0px_#0f172a] rounded-xl text-slate-900 space-y-2">
+                  <div className="flex items-center gap-2 font-black text-xs text-slate-900">
+                    <AlertCircle className="w-4 h-4 text-rose-700 shrink-0" />
                     <span>Pesan Ke Admin/Support Ditutup Sementara</span>
                   </div>
-                  <p className="text-[11px] leading-relaxed text-slate-300">
+                  <p className="text-[11px] leading-relaxed text-slate-800 font-medium">
                     {settings.supportAiStatusMessage || 'Layanan pengiriman pesan langsung ke Admin/Support sedang dinonaktifkan sementara. Namun Anda tetap dapat menggunakan layanan Tanya AI di bawah untuk mendapat jawaban otomatis.'}
                   </p>
                   <div className="pt-1 flex items-center gap-2">
@@ -465,7 +465,7 @@ export const CarlosSupportModal: React.FC<CarlosSupportModalProps> = ({
                       href={settings.linkSaluran || 'https://whatsapp.com/channel/0029Vb4F9G1J3RujV8yE6l'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer text-decoration-none shadow-md"
+                      className="px-3 py-1.5 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-slate-900 text-xs font-black border-2 border-slate-900 shadow-[2px_2px_0px_0px_#0f172a] flex items-center gap-1.5 cursor-pointer text-decoration-none transition-all active:translate-x-0.5 active:translate-y-0.5"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>Saluran WhatsApp Official</span>
@@ -475,20 +475,20 @@ export const CarlosSupportModal: React.FC<CarlosSupportModalProps> = ({
               )}
 
               {/* Sapaan Bot */}
-              <div className="p-4 bg-gradient-to-br from-blue-950/70 via-slate-900 to-indigo-950/70 rounded-3xl border border-blue-800/40 shadow-lg space-y-2.5">
+              <div className="p-4 bg-[#0F172A] text-white rounded-xl border-2.5 border-slate-900 shadow-[3.5px_3.5px_0px_0px_#6366f1] space-y-2.5">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white shrink-0">
-                    <Bot className="w-4 h-4 text-blue-200" />
+                  <div className="w-8 h-8 rounded-lg bg-indigo-600 border border-slate-900 flex items-center justify-center text-white shrink-0 font-black">
+                    <Bot className="w-4 h-4 text-indigo-200" />
                   </div>
                   <div>
-                    <div className="font-bold text-white text-xs">Carlos Virtual Assistant</div>
-                    <div className="text-[10px] text-blue-300">Bot Bantuan Resmi Carlos69</div>
+                    <div className="font-black text-amber-300 text-xs">Carlos Virtual Assistant</div>
+                    <div className="text-[10px] text-indigo-300 font-bold">Bot Bantuan Resmi Carlos69</div>
                   </div>
                 </div>
-                <p className="text-xs text-slate-200 leading-relaxed">
+                <p className="text-xs text-slate-200 leading-relaxed font-medium">
                   Halo {currentUser ? currentUser.name : 'Sobat'}! Selamat datang di Carlos Support. Kami siap membantu menjawab pertanyaan sistem atau meneruskan laporan langsung ke Developer &amp; Owner.
                 </p>
-                <div className="p-2.5 rounded-xl bg-blue-900/40 border border-blue-700/40 text-[11px] text-blue-200 flex items-center gap-2">
+                <div className="p-2.5 rounded-lg bg-indigo-900/60 border border-indigo-500 text-[11px] text-indigo-200 font-bold flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>Sistem terhubung langsung dengan server notifikasi real-time.</span>
                 </div>
@@ -496,30 +496,30 @@ export const CarlosSupportModal: React.FC<CarlosSupportModalProps> = ({
 
               {/* Pilihan Menu Navigasi Percakapan */}
               <div className="space-y-2">
-                <div className="text-[11px] font-bold text-slate-400 px-1 uppercase tracking-wider">
+                <div className="text-[11px] font-black text-slate-900 px-1 uppercase tracking-wider">
                   Pilih Layanan Bantuan:
                 </div>
 
                 {/* Option 1: AI FAQ Chat (ALWAYS ENABLED even if AI/Support is toggled off) */}
                 <button
                   onClick={() => setCurrentView('ai_faq')}
-                  className="w-full p-3.5 rounded-2xl bg-[#1E293B] hover:bg-slate-800 border border-slate-700/70 transition-all text-left flex items-center justify-between group cursor-pointer shadow-md active:scale-98"
+                  className="w-full p-3.5 rounded-xl bg-white hover:bg-amber-100 border-2.5 border-slate-900 shadow-[3.5px_3.5px_0px_0px_#0f172a] transition-all text-left flex items-center justify-between group cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-lg bg-indigo-200 border-2 border-slate-900 text-slate-900 flex items-center justify-center shrink-0">
                       <Bot className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs flex items-center gap-1.5">
+                      <div className="font-black text-slate-900 text-xs flex items-center gap-1.5">
                         <span>Pertanyaan Umum (AI Assistant)</span>
-                        <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-blue-500/20 text-blue-300">Instan</span>
+                        <span className="px-1.5 py-0.2 rounded text-[9px] font-black bg-amber-300 text-slate-900 border border-slate-900">Instan</span>
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">
+                      <div className="text-[11px] text-slate-700 font-medium mt-0.5">
                         Tanya seputar aturan setor, password wajib, rate harga, WD DANA
                       </div>
                     </div>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-slate-900 font-black" />
                 </button>
 
                 {/* Option 2: Bug Report */}
@@ -531,29 +531,29 @@ export const CarlosSupportModal: React.FC<CarlosSupportModalProps> = ({
                     }
                     setCurrentView('bug_report');
                   }}
-                  className={`w-full p-3.5 rounded-2xl bg-[#1E293B] hover:bg-slate-800 border transition-all text-left flex items-center justify-between group cursor-pointer shadow-md active:scale-98 ${
-                    settings.isSupportAiEnabled === false ? 'opacity-60 border-slate-800' : 'border-rose-900/40'
+                  className={`w-full p-3.5 rounded-xl bg-white hover:bg-rose-100 border-2.5 border-slate-900 shadow-[3.5px_3.5px_0px_0px_#0f172a] transition-all text-left flex items-center justify-between group cursor-pointer active:translate-x-0.5 active:translate-y-0.5 ${
+                    settings.isSupportAiEnabled === false ? 'opacity-60 bg-slate-100' : ''
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-rose-600/20 border border-rose-500/30 text-rose-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-lg bg-rose-200 border-2 border-slate-900 text-slate-900 flex items-center justify-center shrink-0">
                       <Bug className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs flex items-center gap-1.5">
+                      <div className="font-black text-slate-900 text-xs flex items-center gap-1.5">
                         <span>Laporkan Bug &amp; Kendala Sistem</span>
                         {settings.isSupportAiEnabled === false ? (
-                          <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300">Tutup</span>
+                          <span className="px-1.5 py-0.2 rounded text-[9px] font-black bg-rose-300 text-slate-900 border border-slate-900">Tutup</span>
                         ) : (
-                          <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300">Laporan Kendala</span>
+                          <span className="px-1.5 py-0.2 rounded text-[9px] font-black bg-rose-300 text-slate-900 border border-slate-900">Laporan Kendala</span>
                         )}
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">
+                      <div className="text-[11px] text-slate-700 font-medium mt-0.5">
                         Kirim laporan error &amp; lampirkan screenshot kendala sistem
                       </div>
                     </div>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-slate-900 font-black" />
                 </button>
 
                 {/* Option 3: Owner Chat */}
@@ -565,19 +565,19 @@ export const CarlosSupportModal: React.FC<CarlosSupportModalProps> = ({
                     }
                     setCurrentView('owner_chat');
                   }}
-                  className={`w-full p-3.5 rounded-2xl bg-[#1E293B] hover:bg-slate-800 border transition-all text-left flex items-center justify-between group cursor-pointer shadow-md active:scale-98 ${
-                    settings.isSupportAiEnabled === false ? 'opacity-60 border-slate-800' : 'border-amber-900/40'
+                  className={`w-full p-3.5 rounded-xl bg-white hover:bg-amber-100 border-2.5 border-slate-900 shadow-[3.5px_3.5px_0px_0px_#0f172a] transition-all text-left flex items-center justify-between group cursor-pointer active:translate-x-0.5 active:translate-y-0.5 ${
+                    settings.isSupportAiEnabled === false ? 'opacity-60 bg-slate-100' : ''
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-600/20 border border-amber-500/30 text-amber-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-lg bg-amber-300 border-2 border-slate-900 text-slate-900 flex items-center justify-center shrink-0">
                       <Crown className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs flex items-center gap-1.5">
+                      <div className="font-black text-slate-900 text-xs flex items-center gap-1.5">
                         <span>Hubungi Owner / CS Langsung</span>
                         {settings.isSupportAiEnabled === false ? (
-                          <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-500/20 text-amber-300">Tutup</span>
+                          <span className="px-1.5 py-0.2 rounded text-[9px] font-black bg-amber-300 text-slate-900 border border-slate-900">Tutup</span>
                         ) : (
                           <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-500/20 text-amber-300">Prioritas</span>
                         )}

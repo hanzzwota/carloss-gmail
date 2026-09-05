@@ -55,7 +55,7 @@ export const RiwayatView: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-3 pb-24 space-y-4">
+    <div className="w-full max-w-none px-1 sm:px-2 pt-3 pb-24 space-y-4">
       {/* Search Bar */}
       <div className="relative">
         <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />

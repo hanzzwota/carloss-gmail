@@ -218,27 +218,27 @@ export const StorView: React.FC<StorViewProps> = ({ onOpenRules, onOpenSaluranWA
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-3 pb-24 space-y-4">
+    <div className="w-full max-w-none px-1 sm:px-2 pt-3 pb-24 space-y-4">
       {/* 1. STATUS STORAN BANNER (GREEN = OPEN, RED = CLOSED) */}
-      <div className={`p-4 border rounded-2xl text-xs flex items-start gap-3 transition-all ${
+      <div className={`p-4 border-2.5 border-slate-900 shadow-[3.5px_3.5px_0px_0px_#0f172a] rounded-2xl text-xs flex items-start gap-3 transition-all ${
         settings.isStorOpen 
-          ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-950' 
-          : 'bg-rose-500/10 border-rose-500/30 text-rose-950'
+          ? 'bg-emerald-200 text-slate-900' 
+          : 'bg-rose-200 text-slate-900'
       }`}>
-        <div className={`w-2.5 h-2.5 rounded-full mt-1 shrink-0 ${settings.isStorOpen ? 'bg-emerald-500 animate-ping' : 'bg-rose-500'}`} />
+        <div className={`w-3 h-3 rounded-full mt-0.5 shrink-0 border border-slate-900 ${settings.isStorOpen ? 'bg-emerald-600 animate-ping' : 'bg-rose-600'}`} />
         <div className="space-y-1 flex-1">
-          <div className={`font-black text-xs flex items-center justify-between ${settings.isStorOpen ? 'text-emerald-800' : 'text-rose-800'}`}>
+          <div className="font-black text-xs flex items-center justify-between text-slate-900">
             <span>{settings.isStorOpen ? '🟢 SETORAN SEDANG DIBUKA' : '🔴 SETORAN SEDANG DITUTUP SEMENTARA'}</span>
-            <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${settings.isStorOpen ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`}>
+            <span className={`px-2 py-0.5 rounded-lg border-2 border-slate-900 text-[10px] font-black ${settings.isStorOpen ? 'bg-amber-300 text-slate-900' : 'bg-rose-300 text-slate-900'}`}>
               {settings.isStorOpen ? 'Buka Slot' : 'Tutup Slot'}
             </span>
           </div>
-          <p className="text-[11px] leading-relaxed">
+          <p className="text-[11px] font-semibold leading-relaxed">
             {settings.storStatusMessage || settings.infoDashboard}
           </p>
           <button
             onClick={onOpenSaluranWA}
-            className="text-[11px] font-bold text-blue-700 hover:underline inline-flex items-center gap-1 cursor-pointer"
+            className="text-[11px] font-black text-indigo-700 hover:underline inline-flex items-center gap-1 cursor-pointer"
           >
             More info di saluran →
           </button>

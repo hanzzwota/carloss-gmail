@@ -42,7 +42,7 @@ export const AkunSayaView: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-3 pb-24 space-y-4">
+    <div className="w-full max-w-none px-1 sm:px-2 pt-3 pb-24 space-y-4">
       {/* Header */}
       <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-200">
         <div className="flex items-center justify-between">

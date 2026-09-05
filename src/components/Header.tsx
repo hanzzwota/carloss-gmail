@@ -42,47 +42,49 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSaluranWA, onOpenAuth, onO
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs transition-all">
-      <div className="max-w-4xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+    <header className="sticky top-0 z-40 bg-[#fffefb] border-b-2.5 border-slate-900 shadow-[0_3px_0_0_#0f172a] transition-all">
+      <div className="max-w-5xl mx-auto px-3 sm:px-5 py-2.5 flex items-center justify-between gap-2.5">
         {/* Brand Logo: Blue Mail Icon + S3L Carlos69 */}
         <div 
           onClick={() => setActiveTab('beranda')}
           className="flex items-center gap-2 cursor-pointer select-none group shrink-0"
         >
-          <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform">
+          <div className="w-9 h-9 rounded-xl bg-indigo-600 border-2 border-slate-900 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center text-white group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
             <Mail className="w-4 h-4" />
           </div>
-          <div className="flex items-center gap-1 font-bold tracking-tight">
-            <span className="text-slate-900 text-sm font-semibold">S3L GMAIL</span>
-            <span className="text-blue-600 text-sm font-black">{settings.namaDashboard || 'CARLOS69'}</span>
+          <div className="flex items-center gap-1 font-black tracking-tight text-base">
+            <span className="text-slate-900">S3L GMAIL</span>
+            <span className="text-indigo-600 bg-amber-300 px-1.5 py-0.5 rounded-lg border-2 border-slate-900 shadow-[1.5px_1.5px_0px_0px_#0f172a]">{settings.namaDashboard || 'CARLOS69'}</span>
           </div>
         </div>
 
         {/* Public Navigation Menu: Beranda | Harga | Cara Beli | Kontak */}
-        <nav className="hidden sm:flex items-center gap-1 md:gap-2">
+        <nav className="hidden sm:flex items-center gap-1.5">
           <button
             onClick={() => setActiveTab('beranda')}
-            className={`px-2.5 py-1 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
-              activeTab === 'beranda' ? 'text-blue-600 bg-blue-50' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+            className={`px-3 py-1.5 rounded-xl text-xs font-black border-2 transition-all cursor-pointer ${
+              activeTab === 'beranda' 
+                ? 'text-slate-900 bg-amber-300 border-slate-900 shadow-[2px_2px_0px_0px_#0f172a]' 
+                : 'text-slate-700 hover:text-slate-900 bg-white border-transparent hover:border-slate-900 hover:bg-slate-100'
             }`}
           >
             Beranda
           </button>
           <button
             onClick={() => onOpenPublicPage('harga')}
-            className="px-2.5 py-1 rounded-xl text-xs font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-xl text-xs font-black text-slate-700 bg-white hover:bg-slate-100 border-2 border-slate-200 hover:border-slate-900 transition-all cursor-pointer"
           >
             Harga
           </button>
           <button
             onClick={() => onOpenPublicPage('carabeli')}
-            className="px-2.5 py-1 rounded-xl text-xs font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-xl text-xs font-black text-slate-700 bg-white hover:bg-slate-100 border-2 border-slate-200 hover:border-slate-900 transition-all cursor-pointer"
           >
             Cara Beli
           </button>
           <button
             onClick={() => onOpenPublicPage('kontak')}
-            className="px-2.5 py-1 rounded-xl text-xs font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-xl text-xs font-black text-slate-700 bg-white hover:bg-slate-100 border-2 border-slate-200 hover:border-slate-900 transition-all cursor-pointer"
           >
             Kontak
           </button>

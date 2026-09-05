@@ -69,7 +69,7 @@ export const ProfilView: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-3 pb-24 space-y-4">
+    <div className="w-full max-w-none px-1 sm:px-2 pt-3 pb-24 space-y-4">
       {/* Blocked warning banner if user blocked */}
       {currentUser.status === 'blocked' && (
         <div className="p-4 bg-rose-50 border border-rose-200 text-rose-800 rounded-3xl text-xs font-bold flex items-start gap-2.5 shadow-sm">

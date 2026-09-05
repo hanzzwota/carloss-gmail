@@ -81,11 +81,11 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenPublicPage, onOpenRu
       </div>
 
       {/* Main Login/Register Card */}
-      <div className="bg-white w-full max-w-md rounded-[32px] shadow-2xl shadow-blue-950/8 border border-slate-200/80 p-6 sm:p-8 relative">
+      <div className="bg-[#fffefb] w-full max-w-md sm:max-w-lg rounded-2xl border-2.5 border-slate-900 shadow-[5px_5px_0px_0px_#0f172a] p-6 sm:p-8 relative">
         {/* Top Security Notice */}
-        <div className="mb-5 p-3 rounded-2xl bg-blue-50/80 border border-blue-100 text-blue-900 text-xs flex items-center gap-2.5">
-          <Shield className="w-4 h-4 text-blue-600 shrink-0" />
-          <span className="font-medium">
+        <div className="mb-5 p-3 rounded-xl bg-amber-200 border-2 border-slate-900 text-slate-900 text-xs flex items-center gap-2.5 shadow-[2px_2px_0px_0px_#0f172a]">
+          <Shield className="w-4 h-4 text-slate-900 shrink-0" />
+          <span className="font-bold">
             Silakan masuk atau daftar akun untuk mengakses dashboard dan fitur setoran.
           </span>
         </div>
